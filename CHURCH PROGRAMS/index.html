@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Mission Accomplize — Professional strategy, execution and advisory services." />
+  <title>Mission Accomplize | Strategic Performance Consulting</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#hero">
+        <img class="brand-logo" src="assets/logo.svg" alt="Mission Accomplize" />
+        <div>
+          <h1 class="brand-title">Mission Accomplize</h1>
+          <p class="brand-subtitle">Strategic Performance Consulting</p>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#strategy">Strategy</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary" href="#contact">Get Started</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <p class="eyebrow">Your execution advantage</p>
+          <h2>Strategic Roadmaps. Business Agility. Measurable Velocity.</h2>
+          <p>We partner with leadership teams to operationalize strategy, accelerate outcomes, and create repeatable execution frameworks.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Schedule Discovery</a>
+            <a class="btn btn-outline" href="#services">View Services</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="card metrics-card">
+            <h3>Latest Results</h3>
+            <div class="metrics-grid">
+              <div><strong>+37%</strong><span>Delivery Efficiency</span></div>
+              <div><strong>+48%</strong><span>Planning Accuracy</span></div>
+              <div><strong>+22%</strong><span>Stakeholder Confidence</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Mission Accomplize</h2>
+        <p>We combine business strategy, operations design and empowerment coaching into a single system that keeps teams aligned and results predictable.</p>
+        <div class="cards-grid">
+          <article class="card"><h3>Clarity</h3><p>Outcome-first alignment across milestones, metrics and accountability.</p></article>
+          <article class="card"><h3>Control</h3><p>Risk-aware planning, capacity modeling, and adaptive cadence.</p></article>
+          <article class="card"><h3>Momentum</h3><p>Repeatable routines that convert plans into performance after every cycle.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section section-light">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="cards-grid">
+          <article class="card"><h3>Strategic Planning</h3><p>Vision to operating model, OKR and roadmap frameworks calibrated to your market.</p></article>
+          <article class="card"><h3>Execution Enablement</h3><p>Daily and weekly rituals, governance, and metrics engines for continuous delivery.</p></article>
+          <article class="card"><h3>Leadership Growth</h3><p>Decision science, influence frameworks, and conflict management for high-performing teams.</p></article>
+          <article class="card"><h3>Performance Intelligence</h3><p>Data-driven reviews, trend analytics and intervention signals to keep work accelerating.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy" class="section">
+      <div class="container">
+        <h2>Strategic Execution Framework</h2>
+        <div class="timeline">
+          <div><strong>1.</strong><p>Discover & focus</p></div>
+          <div><strong>2.</strong><p>Design & align</p></div>
+          <div><strong>3.</strong><p>Deploy & track</p></div>
+          <div><strong>4.</strong><p>Optimize & scale</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="missions" class="section section-light">
+      <div class="container">
+        <h2>Live Mission Feed</h2>
+        <p>Live updates using backend mission API + WebSockets.</p>
+        <div id="missionsList" class="cards-grid"></div>
+        <p id="missionsStatus" class="form-status"></p>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section section-light">
+      <div class="container">
+        <h2>Selected Portfolio</h2>
+        <div class="cards-grid">
+          <article class="card"><h3>Global SaaS Scale-up</h3><p>Aligned product and GTM teams; boosted launch throughput by 34%.</p></article>
+          <article class="card"><h3>Financial Services Ops</h3><p>Designed enterprise risk control models with 99% compliance efficacy.</p></article>
+          <article class="card"><h3>HealthTech Transformation</h3><p>Reduced release cycle time by 22% while preserving quality KPIs.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2>Connect for a strategy session</h2>
+          <p>Tell us about your current priority and we’ll send a precise engagement outline in 24h.</p>
+          <p><strong>Email:</strong> <a href="mailto:accomplizeworldx@gmail.com">accomplizeworldx@gmail.com</a></p>
+          <p><strong>Phone:</strong> 08088044082</p>
+        </div>
+        <form id="contactForm" class="contact-form" novalidate>
+          <label>Name<input type="text" name="name" required placeholder="Your name" /></label>
+          <label>Company<input type="text" name="company" placeholder="Company name" /></label>
+          <label>Email<input type="email" name="email" required placeholder="you@company.com" /></label>
+          <label>Message<textarea name="message" rows="5" required placeholder="Main challenge / goal"></textarea></label>
+          <button type="submit" class="btn btn-primary">Send Inquiry</button>
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row"><span>© <span id="year"></span> Mission Accomplize</span><span>Built for strategy, designed for results</span></div>
+  </footer>
+
+  <script src="https://cdn.socket.io/4.7.1/socket.io.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

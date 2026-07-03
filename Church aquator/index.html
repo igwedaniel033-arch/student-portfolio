@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I AM MORE THAN A CONQUEROR — Prayer Presentation</title>
+  <meta name="description" content="A clean, elegant prayer presentation page for the theme 'I AM MORE THAN A CONQUEROR' with thanksgiving, mercy, request, and decree sections.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --page-bg: #F8F9FA;
+      --text: #222222;
+      --muted: #4B4B4B;
+      --card: #FFFFFF;
+      --border: #E8EAED;
+      --primary: #1E3A8A;
+      --secondary: #D4AF37;
+      --thanksgiving: #D4AF37;
+      --mercy: #6B203C;
+      --request: #1E3A8A;
+      --decree: #D96A1E;
+      --radius: 24px;
+      --max-width: 1180px;
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: radial-gradient(circle at top left, rgba(212,175,55,0.12), transparent 26%),
+                  radial-gradient(circle at bottom right, rgba(30,58,138,0.14), transparent 24%),
+                  var(--page-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    body {
+      padding: 24px 0 40px;
+    }
+
+    .page {
+      width: min(100%, var(--max-width));
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 36px 20px 20px;
+    }
+
+    .hero__title {
+      margin: 0;
+      font-size: clamp(3rem, 4vw, 4.5rem);
+      line-height: 0.95;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--primary);
+    }
+
+    .hero__subtitle {
+      margin: 16px auto 0;
+      max-width: 760px;
+      font-size: 1.25rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .hero__verse {
+      margin: 18px auto 0;
+      max-width: 660px;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .sections {
+      display: grid;
+      gap: 28px;
+      margin-top: 36px;
+    }
+
+    .section-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 40px rgba(34, 34, 34, 0.08);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 55px rgba(34, 34, 34, 0.11);
+    }
+
+    .section-card__header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: center;
+      padding: 28px 28px 18px;
+      border-bottom: 1px solid #F0F1F3;
+    }
+
+    .section-card__marker {
+      width: 7px;
+      min-height: 74px;
+      border-radius: 999px;
+    }
+
+    .section-card__label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section-card__heading {
+      margin: 10px 0 0;
+      font-size: clamp(2rem, 2.4vw, 2.7rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.08;
+    }
+
+    .section-card__subcopy {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 740px;
+    }
+
+    .prayer-list {
+      padding: 0 28px 28px;
+      margin: 0;
+      list-style: none;
+    }
+
+    .prayer-point {
+      margin: 0;
+      padding: 18px 0;
+      border-bottom: 1px solid #F0F1F3;
+      font-size: clamp(1.1rem, 1.3vw, 1.45rem);
+    }
+
+    .prayer-point:last-child {
+      border-bottom: none;
+    }
+
+    .prayer-point strong {
+      display: inline-block;
+      min-width: 2.1rem;
+      margin-right: 10px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .section-card--thanksgiving .section-card__marker {
+      background: linear-gradient(180deg, #D4AF37, #FFD56F);
+    }
+
+    .section-card--mercy .section-card__marker {
+      background: linear-gradient(180deg, #6B203C, #A63A5B);
+    }
+
+    .section-card--request .section-card__marker {
+      background: linear-gradient(180deg, #1E3A8A, #4363D7);
+    }
+
+    .section-card--decree .section-card__marker {
+      background: linear-gradient(180deg, #D96A1E, #F29D45);
+    }
+
+    @media (min-width: 900px) {
+      .sections {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 0 24px;
+      }
+
+      .hero {
+        padding: 24px 16px 16px;
+      }
+
+      .section-card__header {
+        padding: 22px 20px 16px;
+      }
+
+      .section-card__heading {
+        font-size: 2rem;
+      }
+
+      .prayer-point {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .section-card {
+        box-shadow: none;
+        border: 1px solid #e0e0e0;
+      }
+
+      .prayer-point {
+        border-color: #e6e6e6;
+      }
+    }
+  </style>
+</head>
+<body>
+
+	<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.left='20px';this.style.top='20px';this.style.background='#000';this.style.padding='8px';">Skip to content</a>
+
+	<header class="site-header" role="banner">
+		<div class="brand">
+			<h1>Nehemiah Study</h1>
+			<p>Chapters 1–8 • Leadership & Restoration</p>
+		</div>
+		<nav aria-label="Primary navigation">
+			<a href="#study">Study</a>
+			<a href="#summary">Summary</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</header>
+
+	<main id="main">
+		<section class="hero" aria-labelledby="hero-title">
+			<div class="hero-content">
+				<h2 id="hero-title">THE BOOK OF NEHEMIAH</h2>
+				<p class="lead">A premium, ministry-focused study of Nehemiah chapters 1–8 exploring leadership, faith, and communal restoration.</p>
+				<p style="margin-top:12px;color:var(--muted);">This study combines historical context, practical leadership insights, and pastoral application for church leaders and engaged readers.</p>
+				<a class="btn" href="#study">Begin Study</a>
+			</div>
+		</section>
+
+		<section id="study" class="container" aria-labelledby="study-heading">
+			<div class="section-title">
+				<h3 id="study-heading">Professional Chapter Summaries</h3>
+				<p>Concise, ministry-ready expositions of Nehemiah 1–8 with leadership takeaways and spiritual application.</p>
+			</div>
+
+			<div class="chapters">
+
+				<article class="chapter" aria-labelledby="ch1">
+					<h4 id="ch1">Chapter 1 — A Burden That Ignited a Mission</h4>
+					<div class="subtitle">Prayerful beginning and personal conviction</div>
+					<p>Serving as cupbearer to the Persian king, Nehemiah learns of Jerusalem's broken walls and responds in deep mourning, prayer, and intercession. His leadership begins with spiritual responsibility and humble dependence on God.</p>
+					<div class="highlight"><strong>Leadership Insight:</strong> True leaders convert burden into vision by seeking God's direction before taking action.</div>
+					<div class="lesson-box">
+						<h5>Key Spiritual Lessons</h5>
+						<ul>
+							<li>Prayer should precede action.</li>
+							<li>Leadership begins with compassion and humility.</li>
+							<li>Spiritual preparation is essential for effective service.</li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="chapter" aria-labelledby="ch2">
+					<h4 id="ch2">Chapter 2 — Vision Meets Opportunity</h4>
+					<div class="subtitle">Strategic action after prayer</div>
+					<p>Nehemiah petitions King Artaxerxes, secures authorization and resources, surveys Jerusalem, and mobilizes the people—demonstrating strategic leadership that pairs faith with wise planning.</p>
+					<div class="highlight"><strong>Leadership Insight:</strong> Faith and planning work together to mobilize people and resources.</div>
+					<div class="lesson-box">
+						<h5>Key Spiritual Lessons</h5>
+						<ul>
+							<li>Investigate before acting.</li>
+							<li>Communicate vision clearly to mobilize others.</li>
+							<li>Opposition does not negate God’s purpose.</li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="chapter" aria-labelledby="ch3">
+					<h4 id="ch3">Chapter 3 — United Builders, One Mission</h4>
+					<div class="subtitle">Collective responsibility and teamwork</div>
+					<p>Different groups across the city work together on assigned sections of the wall, highlighting how organized, shared effort produces sustainable progress.</p>
+					<div class="highlight"><strong>Leadership Insight:</strong> Empowering others multiplies effectiveness and builds community ownership.</div>
+				</article>
+
+				<article class="chapter" aria-labelledby="ch4">
+					<h4 id="ch4">Chapter 4 — Building Through Opposition</h4>
+					<div class="subtitle">Resilience amid ridicule and threats</div>
+					<p>Facing mockery and plans of attack, the people continue building with tools in one hand and weapons nearby—trusting God while exercising prudence.</p>
+					<div class="highlight"><strong>Leadership Insight:</strong> Resilient leadership sustains progress during pressure and fear.</div>
+				</article>
+
+				<article class="chapter" aria-labelledby="ch5">
+					<h4 id="ch5">Chapter 5 — Justice Within the Community</h4>
+					<div class="subtitle">Addressing internal injustice and preserving unity</div>
+					<p>Nehemiah confronts economic exploitation and restores justice, modeling servant leadership and integrity that protects community cohesion.</p>
+					<div class="highlight"><strong>Leadership Insight:</strong> Integrity and justice safeguard long-term success.</div>
+				</article>
+
+				<article class="chapter" aria-labelledby="ch6">
+					<h4 id="ch6">Chapter 6 — Focused Amid Distractions</h4>
+					<div class="subtitle">Discernment and perseverance</div>
+					<p>As adversaries escalate tactics, Nehemiah refuses diversion and completes the wall, demonstrating discernment and single-minded commitment to God's work.</p>
+					<div class="highlight"><strong>Leadership Insight:</strong> Discernment separates opportunities from distractions.</div>
+				</article>
+
+				<article class="chapter" aria-labelledby="ch7">
+					<h4 id="ch7">Chapter 7 — Building Beyond the Walls</h4>
+					<div class="subtitle">Administration and long-term stewardship</div>
+					<p>With the wall in place, Nehemiah establishes administrative measures, appoints leaders, and preserves identity through registers—ensuring restoration is sustained.</p>
+					<div class="highlight"><strong>Leadership Insight:</strong> Systems preserve the gains produced by vision and effort.</div>
+				</article>
+
+				<article class="chapter" aria-labelledby="ch8">
+					<h4 id="ch8">Chapter 8 — A Great Spiritual Awakening</h4>
+					<div class="subtitle">Scripture, repentance, and renewed joy</div>
+					<p>Ezra reads the Law and the people respond in repentance and celebration—showing that spiritual renewal completes the work of physical restoration.</p>
+					<div class="highlight"><strong>Leadership Insight:</strong> Lasting transformation follows spiritual renewal grounded in God’s Word.</div>
+				</article>
+
+			</div>
+		</section>
+
+		<section id="summary" class="container" aria-labelledby="summary-heading" style="margin-top:28px">
+			<div class="section-title">
+				<h3 id="summary-heading">Executive Summary</h3>
+				<p>The leadership legacy of Nehemiah 1–8: vision, prayer, perseverance, integrity, and renewal.</p>
+			</div>
+
+			<div class="chapter" style="padding:20px">
+				<h4>Executive Summary — The Leadership Legacy</h4>
+				<p>The narrative begins with one burdened leader and becomes a movement that restores a city and a people. Nehemiah models prayerful dependence, strategic planning, courageous leadership, corrective justice, and a commitment to spiritual renewal.</p>
+				<div class="lesson-box" style="margin-top:14px">
+					<h5>Core Takeaways</h5>
+					<ul>
+						<li>Begin with prayer and spiritual clarity.</li>
+						<li>Pair vision with thorough planning and wise administration.</li>
+						<li>Protect integrity and pursue justice within the community.</li>
+						<li>Expect opposition; respond with prayerful resilience and prudence.</li>
+						<li>Make Scripture central to lasting revival and joy.</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer id="contact">
+		<h3>Nehemiah Study Series</h3>
+		<p>The story of Nehemiah demonstrates how God can use one faithful individual to inspire collective transformation. For teaching resources, sermon outlines, or study guides, contact the author or ministry team.</p>
+	</footer>
+
+</body>
+</html>

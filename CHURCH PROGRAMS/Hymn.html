@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Another Year Is Dawning – Hymn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f8ff; /* soft background */
+      font-family: "Times New Roman", Georgia, serif;
+      color: #333;
+    }
+
+    .hymn-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #ffffffcc;
+      padding: 40px 50px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .hymn-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Rainbow gradient for title and subtitle */
+    .hymn-header h1, .hymn-header p {
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .hymn-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    .hymn-header p {
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+
+    .verse {
+      font-size: 1.3rem;
+      line-height: 2;
+      margin-bottom: 30px;
+      /* subtle rainbow gradient for each verse */
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .verse-number {
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+      display: block;
+      color: #2a2a72; /* dark color for verse numbers for readability */
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 10px 18px;
+      margin: 0 8px;
+      font-size: 1rem;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      text-align: center;
+      margin: 30px 0 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hymn-container">
+
+    <div class="hymn-header">
+      <h1>HYMN</h1>
+      <p>Another Year Is Dawning</p>
+    </div>
+
+    <div class="verse">
+      <span class="verse-number">1.</span>
+      Another year is dawning<br>
+      Dear Father, let it be;<br>
+      In working or in waiting,<br>
+      Another year with Thee.<br><br>
+      Another year of progress,<br>
+      Another year of praise;<br>
+      Another year of proving<br>
+      Thy presence all the days.
+    </div>
+
+    <div class="verse">
+      <span class="verse-number">2.</span>
+      Another year of mercies,<br>
+      Of faithfulness and grace;<br>
+      Another year of gladness<br>
+      In shining of Thy face.<br><br>
+      Another year of leaning<br>
+      Upon Thy loving breast;<br>
+      Another year of trusting,<br>
+      Of quiet, happy rest.
+    </div>
+
+    <div class="verse">
+      <span class="verse-number">3.</span>
+      Another year of service,<br>
+      Of witness for Thy love;<br>
+      Another year of training<br>
+      For holier work above.<br><br>
+      Another year is dawning,<br>
+      Dear Father, let it be;<br>
+      On earth or else in heaven,<br>
+      Another year for Thee.
+    </div>
+
+    <div class="controls">
+      <button onclick="increaseFont()">A+</button>
+      <button onclick="decreaseFont()">A−</button>
+    </div>
+
+  </div>
+
+  <footer>
+    Church Hymn Display • HTML & CSS
+  </footer>
+
+  <script>
+    let size = 1.3;
+    const verses = document.querySelectorAll('.verse');
+
+    function increaseFont() {
+      size += 0.1;
+      verses.forEach(v => v.style.fontSize = size + 'rem');
+    }
+
+    function decreaseFont() {
+      size -= 0.1;
+      verses.forEach(v => v.style.fontSize = size + 'rem');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gigal Parish RCCG Admin - Messages</title>
+  <style>body{font-family:system-ui,Arial;padding:1rem}table{width:100%;border-collapse:collapse}td,th{padding:.5rem;border:1px solid #eee}header{display:flex;gap:1rem;align-items:center}</style>
+</head>
+<body>
+  <header>
+    <h1>Gigal Parish RCCG — Messages</h1>
+    <label>Token: <input id="token" type="password" style="font-family:monospace"></label>
+    <button id="load">Load</button>
+  </header>
+  <main>
+    <div id="messages"></div>
+  </main>
+  <script>
+  document.getElementById('load').addEventListener('click', async ()=>{
+    const token = document.getElementById('token').value.trim();
+    if(!token){ alert('Enter admin token'); return; }
+    try{
+      const res = await fetch('/admin/messages', { headers: { 'x-admin-token': token }});
+      if(!res.ok) return alert('Failed to load messages: ' + res.status);
+      const data = await res.json();
+      if(!Array.isArray(data)) return alert('No messages');
+      const html = ['<table><thead><tr><th>Time</th><th>Name</th><th>Email</th><th>Message</th><th>Method</th></tr></thead><tbody>'];
+      data.slice().reverse().forEach(m => {
+        html.push('<tr><td>'+m.ts+'</td><td>'+ (m.name||'') +'</td><td>'+ (m.email||'') +'</td><td>'+ (m.message||'') +'</td><td>'+ (m.method||'') +'</td></tr>');
+      });
+      html.push('</tbody></table>');
+      document.getElementById('messages').innerHTML = html.join('');
+    }catch(err){ alert('Error: '+err.message); }
+  });
+  </script>
+</body>
+</html>

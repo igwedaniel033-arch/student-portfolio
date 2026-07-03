@@ -1,0 +1,37 @@
+:root{
+  --navy:#0b3a66;
+  --gold:#ffd24c;
+  --white:#ffffff;
+  --muted:#f3f4f6;
+}
+body{ font-family: Inter, Arial, sans-serif; margin:0; background:var(--muted); color: #111 }
+.topbar{ background:var(--navy); color:var(--white); padding:12px 16px; display:flex; justify-content:space-between; align-items:center }
+.brand{ font-weight:700 }
+.app-root{ min-height:100vh; display:flex; flex-direction:column }
+.main{ padding:20px; flex:1 }
+.chat-page{ display:flex; gap:16px }
+.members-panel{ width:220px; background:#fff; border-radius:8px; padding:12px }
+.chat-panel{ flex:1; background:#fff; border-radius:8px; padding:12px; display:flex; flex-direction:column }
+.chat-window{ display:flex; flex-direction:column; height:60vh }
+.messages{ flex:1; overflow:auto; padding:8px }
+.message{ margin-bottom:8px; background:#f8fafc; padding:8px; border-radius:6px }
+.meta{ font-size:12px; color:#555 }
+.composer{ display:flex; gap:8px; padding-top:8px }
+.composer input{ flex:1; padding:8px; border-radius:6px; border:1px solid #ddd }
+.composer button{ background:var(--navy); color:var(--white); border:none; padding:8px 12px; border-radius:6px }
+.login-wrap{ height:100vh; display:flex; align-items:center; justify-content:center }
+.login-box{ background:#fff; padding:24px; border-radius:8px; width:320px; box-shadow:0 6px 18px rgba(11,58,102,0.08) }
+.login-box h2{ margin:0 0 12px }
+.login-box label{ display:block; font-size:13px; margin-top:8px }
+.login-box input{ width:100%; padding:8px; margin-top:6px; border-radius:6px; border:1px solid #ddd }
+.login-box button{ margin-top:12px; width:100%; padding:10px; background:var(--navy); color:var(--white); border:none; border-radius:6px }
+.error{ margin-top:8px; color:crimson }
+
+.media-uploader{ display:flex; gap:8px; align-items:center; margin-top:8px }
+.media-uploader input{ border:1px solid #ddd; padding:6px; border-radius:6px }
+.media-uploader button{ background:var(--gold); border:none; padding:8px 10px; border-radius:6px }
+
+.rich-editor .ql-editor{ min-height:160px }
+
+.admin-page input, .admin-page textarea, .admin-page select{ width:100%; padding:8px; margin-top:8px; border:1px solid #ddd; border-radius:6px }
+.admin-page button{ margin-top:8px }

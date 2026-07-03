@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install server deps
+        run: |
+          cd server
+          npm ci || npm install
+      - name: Run server lint/tests
+        run: |
+          cd server
+          npm ci || npm install
+          npm run lint || true
+          npm test || true
+      - name: Build client
+        run: |
+          cd client
+          npm ci || npm install
+          npm run build
+      - name: Install Playwright
+        run: |
+          cd client
+          npx playwright install --with-deps
+      - name: Run full stack in docker-compose and E2E
+        run: |
+          cd ${{ github.workspace }}
+          docker-compose up --build -d
+          # wait for frontend to be ready
+          for i in {1..30}; do
+            sleep 2
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/health || echo "000")
+            if [ "$STATUS" = "200" ]; then echo "backend ready"; break; fi
+          done
+          # run tests (server unit tests)
+          cd server
+          npm ci || npm install
+          npm test || true
+          # run playwright tests against frontend at http://localhost
+          export TEST_BASE_URL="http://localhost"
+          cd ../client
+          npx playwright test --reporter=dot
+          docker-compose down

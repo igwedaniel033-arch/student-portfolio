@@ -1,0 +1,67 @@
+{
+  "siteTitle": "Gigal Parish RCCG",
+  "brandText": "Gigal Parish RCCG",
+  "logoPath": "assets/logo.svg",
+  "primaryColor": "#0b3a66",
+  "accentColor": "#ffd24c",
+  "contactEmail": "info@gigalparish.example",
+  "address": "Gigal Parish, RCCG\nMain Street, City, State",
+  "phone": "(000) 000-0000",
+
+  "defaultTheme": "gigal-navy",
+  "themes": [
+    {
+      "id": "rainbow",
+      "name": "Rainbow",
+      "vars": {
+        "--primary": "#ff4d6d",
+        "--accent": "#ffb84d",
+        "--surface": "#fff7f0",
+        "--text": "#2b2b2b"
+      }
+    },
+    {
+      "id": "sunset",
+      "name": "Sunset",
+      "vars": {
+        "--primary": "#ff6b6b",
+        "--accent": "#ffb86b",
+        "--surface": "#fff8f5",
+        "--text": "#2b2b2b"
+      }
+    },
+    {
+      "id": "gigal-navy",
+      "name": "Gigal Navy",
+      "vars": {
+        "--primary": "#0b3a66",
+        "--accent": "#ffd24c",
+        "--surface": "#ffffff",
+        "--text": "#071a2b"
+      }
+    },
+    {
+      "id": "professional-green",
+      "name": "Professional Green",
+      "vars": {
+        "--primary": "#0ea5a4",
+        "--accent": "#1f8a5f",
+        "--surface": "#f7fffd",
+        "--text": "#0b3a2e"
+      }
+    },
+    {
+      "id": "professional-gray",
+      "name": "Professional Gray",
+      "vars": {
+        "--primary": "#374151",
+        "--accent": "#6b7280",
+        "--surface": "#f8fafc",
+        "--text": "#0f172a"
+      }
+    }
+  ]
+  ,
+  "recaptchaSiteKey": "",
+  "recaptchaEnabled": false
+}

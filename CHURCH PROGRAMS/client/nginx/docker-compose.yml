@@ -1,0 +1,80 @@
+# =========================================
+# Docker Compose File for ChurchPrograms Project
+# Author: Daniel Bright
+# Purpose: Run Backend, Frontend, and MongoDB in containers
+# Quote: "Containers are the bridges between code and reality." 🌟
+# =========================================
+
+version: "3.9"
+
+services:
+
+  # -----------------------
+  # Backend Service
+  # -----------------------
+  backend:
+    build:
+      context: ./server       # Build Docker image from server folder
+    container_name: gigal-backend
+    restart: always           # Automatically restart if crashes
+    ports:
+      - "5000:5000"           # Expose backend on localhost:5000
+    env_file:
+      - ./server/.env         # Load environment variables
+    depends_on:
+      - mongo                 # Wait for MongoDB container first
+    volumes:
+      - ./server/src:/app/src # Map source code for live development
+    command: >
+      sh -c "npm install && npm run dev"  # Install deps and start backend
+    networks:
+      - gigal-network
+
+  # -----------------------
+  # Frontend Service
+  # -----------------------
+  frontend:
+    build:
+      context: ./client       # Build Docker image from client folder
+    container_name: gigal-frontend
+    restart: always
+    ports:
+      - "3000:3000"           # Expose frontend on localhost:3000
+    volumes:
+      - ./client:/app         # Map frontend folder for live changes
+    command: >
+      sh -c "npm install && npm start"   # Install dependencies and start app
+    networks:
+      - gigal-network
+
+  # -----------------------
+  # MongoDB Service
+  # -----------------------
+  mongo:
+    image: mongo:6.0
+    container_name: gigal-mongo
+    restart: always
+    ports:
+      - "27017:27017"         # Expose MongoDB port
+    volumes:
+      - mongo-data:/data/db   # Persist data even if container stops
+    networks:
+      - gigal-network
+    environment:
+      MONGO_INITDB_DATABASE: gigalDB  # Default DB on startup
+    # Quote: "Data is the heartbeat of every backend." 💾
+
+# -----------------------
+# Shared Volumes
+# -----------------------
+volumes:
+  mongo-data:
+    # Quote: "Persist everything that matters." 🔒
+
+# -----------------------
+# Networks
+# -----------------------
+networks:
+  gigal-network:
+    driver: bridge
+    # Quote: "Containers talk best on the same network." 🌐
